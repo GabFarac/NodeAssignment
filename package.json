@@ -1,4 +1,7 @@
 {
+  "name": "nodeassignment",
+  "type": "module",
+  
   "scripts": {
     "start": "node server",
     "dev": "nodemon server"
