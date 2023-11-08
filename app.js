@@ -34,6 +34,18 @@ app.put('/books/:id', (req, res) => {
         year: object.year || data[i].year,
       }
     }
+    break
+  }
+  res.sendStatus(200);
+})
+
+app.delete('/books/:id', (req, res) => {
+  const {id} = req.params
+  for(let i = 0; i < data.length; i++){
+    if(data[i].id === Number(id)){
+      data.splice(i, 1)
+    }
+    break
   }
   res.sendStatus(200);
 })
