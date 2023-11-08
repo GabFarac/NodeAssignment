@@ -22,4 +22,20 @@ app.post('/books', (req, res) => {
   res.sendStatus(200);
 })
 
+app.put('/books/:id', (req, res) => {
+  const {id} = req.params
+  const object = req.body
+  for(let i = 0; i < data.length; i++){
+    if(data[i].id === Number(id)){
+      data[i] = {
+        id: Number(id),
+        title: object.title || data[i].title,
+        author: object.author || data[i].author,
+        year: object.year || data[i].year,
+      }
+    }
+  }
+  res.sendStatus(200);
+})
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
