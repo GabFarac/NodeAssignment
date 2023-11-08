@@ -28,4 +28,10 @@ app.get('/books', (req, res) => {
     res.status(200).send(titles)
 });
 
+app.get('/books/:id', (req, res) => {
+    const {id} = req.params
+    const book = data.filter(book => book.id === Number(id))
+    res.status(200).send(book[0])
+});
+
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
