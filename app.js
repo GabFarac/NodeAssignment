@@ -13,8 +13,8 @@ app.get('/books', (req, res) => {
 
 app.get('/books/:id', (req, res) => {
     const {id} = req.params
-    const book = data.filter(book => book.id === Number(id))
-    res.status(200).send(book[0])
+    const book = data.find(book => book.id === Number(id))
+    res.status(200).send(book)
 });
 
 app.post('/books', (req, res) => {
